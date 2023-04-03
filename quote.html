@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head >
+  <link href="./quote.css" rel="stylesheet">
+</head>
+<body >
+       
+        <h1><b>Quote Of The Day</b></h1>
+        <h2 id="quote"></h2>
+        <script>
+          url = "https://zenquotes.io/api/random ";
+          fetch(url)
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              for (var i = 0; i < data.length; i++) {
+                document.getElementById("quote").innerHTML = data[i].q;
+                console.log(data[i].q)
+              }
+
+            });
+        </script>
+        
+      
+</body>
+</html>
