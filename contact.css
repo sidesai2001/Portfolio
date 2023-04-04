@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-body { background:rgb(30,30,40); }
-form { max-width:420px; margin:10% auto; }
+body { background:black }
+form { max-width:420px; margin:7% auto; }
 
 .feedback-input {
   color:white;
@@ -49,3 +49,96 @@ textarea {
   font-weight:700;
 }
 [type="submit"]:hover { background:black; color: white;}
+
+/*fro nav bar*/
+*{
+  padding: 0;
+  margin: 0;
+}
+header{
+  background-color: black;
+}
+li{
+  list-style: none;
+}
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.container{
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 20px;
+}
+
+.navbar{
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-branding{
+  width: 8%;
+  padding: 20px 10px;
+}
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 90px;
+}
+.nav-link{
+  transition: 0.3s ease-out;
+}
+.nav-link:hover{
+  color: dodgerblue;
+}
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+@media(max-width:1024px){
+  .hamburger{
+    display: block;
+  }
+ .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+ .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+ .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+ .nav-menu{
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+ .nav-item{
+    margin: 16px 0;
+  }
+ .nav-menu.active{
+    left: 0;
+  }
+}
+
+/*end of nav bar*/

@@ -2,14 +2,53 @@
 <html>
 <head >
   <link href="./contact.css" rel="stylesheet">
+  <link href="./contact.css" rel="stylesheet">
 </head>
 <body >
+  <header>
+    <div class="container"> 
+      <nav class="navbar">
+          <a href="#" class="nav-branding"><img class="logo" src="./images/logo.svg" alt=""></a>
+          <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="./Homepage.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="./quote.html" class="nav-link">Quote</a>
+            </li>
+            <li class="nav-item">
+                <a href="./contact.html" class="nav-link">Contact</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+      </nav>
+    </div>
+</header>
     <form>      
-        <h1><b>Contact Form</b></h1>
+        <h1><b>Contact Form</b></h1><br>
         <input name="name" type="text" class="feedback-input" placeholder="Name" />   
         <input name="email" type="text" class="feedback-input" placeholder="Email" />
         <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
         <input type="submit" value="SUBMIT"/>
       </form>
+      <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+        })
+
+      document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }))
+        
+      </script>
 </body>
 </html>
